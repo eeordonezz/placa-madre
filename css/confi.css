@@ -13,7 +13,6 @@
 
 .root{
     width: 100%;
-    height: 74rem;
+    height: auto    ;
     display: grid;
-    grid-template-rows: 10% 6% 75%;
 }
