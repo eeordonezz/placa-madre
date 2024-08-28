@@ -24,3 +24,11 @@ footer{
         height: auto    ;
     background-color: rgba(0, 0, 0, 0.83);
 }
+@media only screen and (min-device-width: 390px) and (max-device-width: 430px) {
+    .placa_madre{
+        display: grid;
+        grid-template-columns: 1fr  ;
+
+
+    }
+}

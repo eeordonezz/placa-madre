@@ -1,6 +1,6 @@
 const vinculomother = document.querySelector(".placa_madre");
 
-vinculomother.innerHTML =`
+vinculomother.innerHTML = `
     <div id="seccion1">
         <h2>Selecciona un Componente</h2>
 
@@ -8,38 +8,31 @@ vinculomother.innerHTML =`
             <input type="checkbox" value="componente0" class="component-checkbox"> Placa Madre
         </label>
         <label>
-            <input type="checkbox" value="componente1" class="component-checkbox"> CPU
+            <input type="checkbox" value="componente1" class="component-checkbox"> CHIPS
         </label>
         <label>
-            <input type="checkbox" value="componente2" class="component-checkbox"> GPU
+            <input type="checkbox" value="componente2" class="component-checkbox"> DISIPADORES
         </label>
         <label>
             <input type="checkbox" value="componente3" class="component-checkbox"> Fuente De Poder
         </label>
         <label>
-            <input type="checkbox" value="componente4" class="component-checkbox"> Bios
+            <input type="checkbox" value="componente5" class="component-checkbox"> Ranuras
         </label>
-        <label>
-            <input type="checkbox" value="componente5" class="component-checkbox"> Ram
-        </label>
-        <label>
-            <input type="checkbox" value="componente6" class="component-checkbox"> Disipador
-        </label>
+       
     </div>
 
     <div id="seccion2">
         <h2>MotherBoard</h2>
         <img id="componente-imagen" src="https://www.build-gaming-computers.com/images/anatomy-of-computer-motherboard.jpg" alt="Imagen del Component" />
         <div id="botones-componente">
-            <button class="component-button" data-componente="componente0">Placa Madre</button>
-            <button class="component-button" data-componente="componente1">CPU</button>
-            <button class="component-button" data-componente="componente2">GPU</button>
-            <button class="component-button" data-componente="componente3">Fuente De Poder</button>
-            <button class="component-button" data-componente="componente4">Bios</button>
-            <button class="component-button" data-componente="componente5">Ram</button>
-            <button class="component-button" data-componente="componente6">Disipador</button>
-            <button class="component-button" data-componente="componente7">Componente 7</button>
-            <button class="component-button" data-componente="componente8">Componente 8</button>
+            <button class="component-button" id="btn-componente0" style="display: none;" data-componente="componente0">Placa Madre</button>
+            <button class="component-button" id="btn-componente1" style="display: none;" data-componente="componente1">CPU</button>
+            <button class="component-button" id="btn-componente2" style="display: none;" data-componente="componente2">GPU</button>
+            <button class="component-button" id="btn-componente3" style="display: none;" data-componente="componente3">Fuente De Poder</button>
+            <button class="component-button" id="btn-componente4" style="display: none;" data-componente="componente4">Bios</button>
+            <button class="component-button" id="btn-componente5" style="display: none;" data-componente="componente5">Ram</button>
+            <button class="component-button" id="btn-componente6" style="display: none;" data-componente="componente6">Disipador</button>
         </div>
     </div>
 
@@ -93,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'componente3': {
             imagen: 'https://cdn-icons-png.flaticon.com/512/1470/1470179.png', 
             info: `
-                <h3>Fuente De Poder (PSU - Power Supply Unit)</h3>
+                <h3>Fuente De Poder </h3>
                 <p><strong>Función:</strong> Convierte la corriente alterna en continua, crucial para la estabilidad del sistema.</p>
                 <p><strong>Potencia:</strong> Medida en vatios (W), determina cuánta energía puede proporcionar.</p>
                 <p><strong>Eficiencia:</strong> Indicada por certificaciones como 80 PLUS (Bronze, Silver, Gold, Platinum).</p>
@@ -104,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'componente4': {
             imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH0b5XiLyYDZ_JRN2Gd1r5-J4yC5ZDRYKGrA&s', 
             info: `
-                <h3>BIOS (Sistema Básico de Entrada/Salida)</h3>
+                <h3>BIOS </h3>
                 <p><strong>Función:</strong> Inicia el hardware del sistema y prepara el PC para el sistema operativo.</p>
                 <p><strong>UEFI:</strong> Versión más moderna del BIOS, ofrece una interfaz gráfica y soporte para discos de más de 2TB.</p>
                 <p><strong>Configuración:</strong> Permite configurar la secuencia de arranque, activar o desactivar puertos y dispositivos.</p>
@@ -114,98 +107,77 @@ document.addEventListener('DOMContentLoaded', () => {
         'componente5': {
             imagen: 'https://i.blogs.es/3ce3df/ddr5/1366_521.jpg', 
             info: `
-                <h3>RAM (Memoria de Acceso Aleatorio)</h3>
+                <h3>RAM </h3>
                 <p><strong>Función:</strong> Almacena temporalmente datos y programas para acceso rápido por el CPU.</p>
                 <p><strong>Tipos:</strong> DDR4 es la más común, DDR5 es la nueva generación con mayores velocidades.</p>
-                <p><strong>Capacidad:</strong> 8 GB es lo mínimo, 16 GB para gaming, 32 GB o más para tareas profesionales.</p>
-                <p><strong>Latencia:</strong> Indica la rapidez con la que la RAM puede acceder a los datos.</p>
-                <p><strong>Dual Channel:</strong> Mejora el rendimiento al usar dos módulos de RAM en paralelo.</p>
+                <p><strong>Capacidad:</strong> 8 GB es lo mínimo recomendado para tareas generales, 16 GB o más para gaming y aplicaciones intensivas.</p>
+                <p><strong>Velocidad:</strong> Medida en MHz, afecta la rapidez con la que la RAM puede leer y escribir datos.</p>
+                <p><strong>Latencia:</strong> Tiempo que tarda la RAM en acceder a los datos.</p>
             `
         },
         'componente6': {
-            imagen: 'https://st.depositphotos.com/2910605/3956/i/450/depositphotos_39565465-stock-photo-cpu-cooler.jpg', 
+            imagen: 'https://cdn.kemik.gt/2020/12/E97379-003-INTEL-1200x1200-1-1-526x526.jpg', 
             info: `
-                <h3>Disipador</h3>
-                <p><strong>Función:</strong> Mantiene la temperatura del CPU o GPU bajo control, evitando el sobrecalentamiento.</p>
-                <p><strong>Tipos:</strong> Disipador pasivo, Cooler activo (ventilador), y refrigeración líquida.</p>
-                <p><strong>TDP:</strong> Capacidad para manejar el calor, medida en vatios.</p>
-                <p><strong>Compatibilidad:</strong> Asegúrate de que sea compatible con el zócalo del CPU.</p>
-                <p><strong>Nivel de Ruido:</strong> Los ventiladores más grandes suelen ser más silenciosos.</p>
+                <h3>Disipador </h3>
+                <p><strong>Función:</strong> Mantiene la temperatura del CPU o GPU al enfriarlo para evitar el sobrecalentamiento.</p>
+                <p><strong>Tipos:</strong> Disipadores de aire (con ventiladores) y de agua (con radiadores y bombas).</p>
+                <p><strong>Tamaño:</strong> A mayor tamaño, mayor capacidad de enfriamiento.</p>
+                <p><strong>Compatibilidad:</strong> Asegúrate de que sea compatible con tu socket de CPU.</p>
+                <p><strong>Ruido:</strong> Los ventiladores pueden generar ruido, elige uno silencioso si es importante para ti.</p>
             `
-        },
-        // Puedes personalizar los componentes adicionales aquí
-        'componente7': {
-            imagen: 'https://link_to_image_7', 
-            info: '<h3>Componente 7</h3><p>Descripción del Componente 7</p>'
-        },
-        'componente8': {
-            imagen: 'https://link_to_image_8', 
-            info: '<h3>Componente 8</h3><p>Descripción del Componente 8</p>'
         }
     };
 
-    // Funcionalidad para los botones
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const componente = componentes[button.dataset.componente];
-            if (componente) {
-                infoDiv.innerHTML = `<img src="${componente.imagen}" alt="Imagen del componente" style="max-width: 100%;"><div>${componente.info}</div>`;
+    function updateComponentInfo(componenteId) {
+        const componente = componentes[componenteId];
+        if (componente) {
+            infoDiv.innerHTML = `
+                <h3>${componenteId.replace('componente', '')}</h3>
+                <img src="${componente.imagen}" alt="${componenteId}" style="width: 300px; height: auto;"/>
+                ${componente.info}
+            `;
+        }
+    }
+
+    function updateButtonsVisibility() {
+        const checkedValues = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+        buttons.forEach(button => {
+            const buttonComponent = button.dataset.componente;
+
+            if (checkedValues.includes('componente0')) {
+                button.style.display = 'inline-block'; 
+            } else if (checkedValues.includes('componente1') && (buttonComponent === 'componente1' || buttonComponent === 'componente4')) {
+                button.style.display = 'inline-block'; 
+            } else if (checkedValues.includes('componente2') && (buttonComponent === 'componente2' || buttonComponent === 'componente6')) {
+                button.style.display = 'inline-block'; 
+            } else if (checkedValues.includes('componente3') && buttonComponent === 'componente3') {
+                button.style.display = 'inline-block'; 
+            } else if (checkedValues.includes('componente5') && buttonComponent === 'componente5') {
+                button.style.display = 'inline-block'; 
+            } else {
+                button.style.display = 'none';
             }
         });
-    });
 
-    // Funcionalidad para los checkboxes
+        if (checkedValues.length === 0) {
+            infoDiv.innerHTML = '';
+        }
+    }
+
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
-            let selectedComponents = Array.from(checkboxes)
-                                          .filter(cb => cb.checked)
-                                          .map(cb => cb.value);
-
-            infoDiv.innerHTML = ''; // Limpiar el contenido anterior
-            selectedComponents.forEach(value => {
-                const componente = componentes[value];
-                if (componente) {
-                    infoDiv.innerHTML += `<div style="margin-bottom: 20px;"><img src="${componente.imagen}" alt="Imagen del componente" style="max-width: 100%;"><div>${componente.info}</div></div>`;
-                }
-            });
+            updateButtonsVisibility();
         });
     });
-});
 
-
-/*  */
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const { jsPDF } = window.jspdf;
-
-    // Crear el botón
-    let vinculocategorias = document.querySelector(".categorias");
-
-    vinculocategorias.innerHTML = `
-        <a href="https://github.com/eeordonezz/placa-madre"> 
-        <button class="github"> GitHub </button>  
-        </a>
-        <button id="downloadPDF" class="download-pdf"> Descargar PDF </button>
-    `;
-
-    // Manejar el evento de clic del botón
-    document.getElementById("downloadPDF").addEventListener("click", function() {
-        const doc = new jsPDF();
-
-        // Selecciona la sección que deseas exportar como PDF
-        const sectionToExport = document.querySelector(".seccion3");
-        if (sectionToExport) {
-            // Usa html() para convertir la sección en PDF
-            doc.html(sectionToExport, {
-                callback: function (doc) {
-                    doc.save('seccion.pdf');
-                },
-                x: 10,
-                y: 10
-            });
-        } else {
-            alert("La sección no se encontró.");
-        }
+    buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const componenteId = event.target.dataset.componente;
+            updateComponentInfo(componenteId);
+        });
     });
+
 });

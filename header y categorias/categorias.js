@@ -12,10 +12,8 @@ vinculocategorias.innerHTML =`
 /* pdf */
 
  document.querySelector(".descargar").addEventListener("click", () => {
-    // Selecciona la sección que deseas convertir a PDF
     let seccion3 = document.querySelector("#seccion3");
 
-    // Usa html2pdf para convertir la sección a PDFa
     html2pdf().from(seccion3).save('Informacion de los componentes.pdf');
 });
 
