@@ -17,8 +17,8 @@
     margin: 0 auto 20px auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-height: 300px; /* Define un máximo para la altura de la imagen */
-    object-fit: contain; /* Asegura que la imagen mantenga su proporción dentro del contenedor */
+    max-height: 300px; 
+    object-fit: contain; 
 }
 
 
